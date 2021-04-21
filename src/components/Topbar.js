@@ -42,7 +42,7 @@ const Topbar = () => {
                         <DropdownItem href="/CramersRule" >Cramer's Rule</DropdownItem>
                         <DropdownItem href="/GaussElimination" >Gauss Elimination</DropdownItem>
                         <DropdownItem href="/GaussJordan" >GaussJordan Elimination</DropdownItem>
-                        <DropdownItem href="/Bisection" >Conjugate Gradient</DropdownItem>
+                        <DropdownItem href="/ConjugateGradient" >Conjugate Gradient</DropdownItem>
                         <DropdownItem href="/Bisection" >Cholesky Decomposition</DropdownItem>
                         <DropdownItem href="/Bisection" >LU Decomposition</DropdownItem>
                         <DropdownItem href="/Bisection" >Gauss-Seidel</DropdownItem>
