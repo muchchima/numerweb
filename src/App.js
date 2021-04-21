@@ -20,6 +20,7 @@ import NewtonRaphson from './components/RootOfEquation/NewtonRaphson';
 
 import CramersRule from './components/LinearAlgebra/CramersRule';
 import GaussElimination from './components/LinearAlgebra/GaussElimination';
+import GaussJordan from './components/LinearAlgebra/GaussJordan';
 
 class App extends Component {
 
@@ -36,6 +37,7 @@ class App extends Component {
           <Route exact path="/NewtonRaphson" component={NewtonRaphson} />
           <Route exact path="/CramersRule" component={CramersRule} />
           <Route exact path="/GaussElimination" component={GaussElimination} />
+          <Route exact path="/GaussJordan" component={GaussJordan} />
         </BrowserRouter>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 //import bootstrap css
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //import bootstrap components
 import { Nav, Navbar} from 'react-bootstrap'
@@ -41,7 +41,7 @@ const Topbar = () => {
                         <DropdownItem header>Methods</DropdownItem>
                         <DropdownItem href="/CramersRule" >Cramer's Rule</DropdownItem>
                         <DropdownItem href="/GaussElimination" >Gauss Elimination</DropdownItem>
-                        <DropdownItem href="/Bisection" >Gauss-Jordan Elimination</DropdownItem>
+                        <DropdownItem href="/GaussJordan" >GaussJordan Elimination</DropdownItem>
                         <DropdownItem href="/Bisection" >Conjugate Gradient</DropdownItem>
                         <DropdownItem href="/Bisection" >Cholesky Decomposition</DropdownItem>
                         <DropdownItem href="/Bisection" >LU Decomposition</DropdownItem>

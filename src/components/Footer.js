@@ -1,6 +1,6 @@
 import React from "react";
 const footerStyle = {
-  backgroundColor: "#370883",
+  backgroundColor: "#66ccff",
   fontSize: "20px",
   color: "white",
   borderTop: "1px solid #E7E7E7",
@@ -9,7 +9,7 @@ const footerStyle = {
   position: "fixed",
   left: "0",
   bottom: "0",
-  height: "80px",
+  height: "100px",
   width: "100%"
 };
 
@@ -24,7 +24,7 @@ const Footer = () => {
     <div>
       <div style={phantomStyle} />
       <div style={footerStyle}>
-          <span>Kunut Chirdchai <a className="App-link" href="http://cs.kmutnb.ac.th/">CS@KMUTNB</a></span>
+          <span>Muchchima Chanpanich <a className="App-link" href="http://cs.kmutnb.ac.th/">CS@KMUTNB</a></span>
       </div>
     </div>
   );

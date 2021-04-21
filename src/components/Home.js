@@ -15,7 +15,7 @@ const Home = () => {
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>
-            <code>Numerical React Project</code>
+            <div className ="App-link">Numerical React Project</div >
             </p>
             <a
             className="App-link"
