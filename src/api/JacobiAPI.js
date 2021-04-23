@@ -2,17 +2,18 @@ const express = require("express");
 const router = express.Router();
 const math = require("mathjs");
 
-router.post("/api/GaussSeidelAPI", (req, res) => {
+router.post("/api/JacobiAPI", (req, res) => {
   var MatrixA = req.body.matrixA;
   var MatrixB = [].concat(...req.body.matrixB);
   var MatrixX = [].concat(...req.body.matrixX);
   var solution = [];
   var n = MatrixA.length;
-
-  x = new Array(n);
+  var x = [];
+  var temp;
   var xold;
   epsilon = new Array(n);
   do {
+    temp = [];
     xold = JSON.parse(JSON.stringify(x));
     for (var i = 0; i < n; i++) {
       var sum = 0;
@@ -22,13 +23,10 @@ router.post("/api/GaussSeidelAPI", (req, res) => {
           sum = sum + MatrixA[i][j] * MatrixX[j];
         }
       }
-      x[i] = (MatrixB[i] - sum) / MatrixA[i][i]; //update x[i]
+      temp[i] = (MatrixB[i] - sum) / MatrixA[i][i]; //update x[i]
     }
-  } while (error(x, xold)); //if true , continue next iteration
-
-  for (i = 0; i < x.length; i++) {
-    solution.push(x[i]);
-  }
+    x = JSON.parse(JSON.stringify(temp));
+  } while (error(x, xold));
 
   function error(xnew, xold) {
     for (var i = 0; i < xnew.length; i++) {
@@ -42,6 +40,7 @@ router.post("/api/GaussSeidelAPI", (req, res) => {
     return false;
   }
 
+  solution = x;
   console.log(solution);
 
   res.json({
