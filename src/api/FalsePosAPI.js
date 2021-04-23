@@ -1,6 +1,37 @@
 const express = require('express');
 const router = express.Router();
 const math = require('mathjs');
+/**
+ * @swagger
+ *  tags:
+ *   name: FalsePosAPI
+ *   description: Get all books
+ * 
+ */
+
+/**
+ * @swagger
+ * /api/FalsePosAPI:
+ *   get:
+ *     tags: [FalsePosAPI]
+ *     responses:
+ *       201:
+ *         description: GET
+ */
+
+ /**
+ * @swagger
+ * /api/FalsePosAPI:
+ *   post:
+ *     parameters:
+ *      - name: equation
+ *      - name: xl
+ *      - name: xr
+ *     tags: [FalsePosAPI]
+ *     responses:
+ *       201:
+ *         description: post data
+ */
 
 router.post('/api/FalsePosAPI', (req, res) => {
   var eq = math.compile(req.body.equation);

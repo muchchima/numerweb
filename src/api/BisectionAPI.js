@@ -1,7 +1,37 @@
 const express = require('express');
 const router = express.Router();
 const math = require('mathjs');
+/**
+ * @swagger
+ *  tags:
+ *   name: Bisection
+ *   description: Get all books
+ * 
+ */
 
+/**
+ * @swagger
+ * /api/BisectionAPI:
+ *   get:
+ *     tags: [Bisection]
+ *     responses:
+ *       201:
+ *         description: GET
+ */
+
+ /**
+ * @swagger
+ * /api/BisectionAPI:
+ *   post:
+ *     parameters:
+ *      - name: equation
+ *      - name: xl
+ *      - name: xr
+ *     tags: [Bisection]
+ *     responses:
+ *       201:
+ *         description: post data
+ */
 router.post('/api/BisectionAPI', (req, res) => {
   
   var eq = math.compile(req.body.equation);

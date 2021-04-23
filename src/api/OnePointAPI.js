@@ -1,7 +1,37 @@
 const express = require('express');
 const router = express.Router();
 const math = require('mathjs');
+/**
+ * @swagger
+ *  tags:
+ *   name: OnePointAPI
+ *   description: Get all books
+ * 
+ */
 
+/**
+ * @swagger
+ * /api/OnePointAPI:
+ *   get:
+ *     tags: [OnePointAPI]
+ *     responses:
+ *       201:
+ *         description: GET
+ */
+
+ /**
+ * @swagger
+ * /api/OnePointAPI:
+ *   post:
+ *     parameters:
+ *      - name: equation
+ *      - name: xl
+ *      - name: xr
+ *     tags: [OnePointAPI]
+ *     responses:
+ *       201:
+ *         description: post data
+ */
 router.post('/api/OnePointAPI', (req, res) => {
   var eq = math.compile(req.body.equation);
   var x_old = parseFloat(req.body.x_old);
