@@ -69,6 +69,7 @@ router.post('/api/SecantAPI', (req, res) => {
         x1 = x_new;
 
     } while (check > 0.0001);
+    console.log(eq.evaluate({x:x_new}));
 
     res.json({
         tmpArr: tmpArr

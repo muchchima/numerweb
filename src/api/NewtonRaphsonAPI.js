@@ -58,6 +58,7 @@ router.post('/api/NewtonRaphsonAPI', (req, res) => {
         });
         x_old = x_new;
     } while (check > 0.00001 && n < 100)
+    console.log(eq.evaluate({x:x_new}));
 
     res.json({
         tmpArr: tmpArr

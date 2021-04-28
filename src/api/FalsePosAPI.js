@@ -79,6 +79,7 @@ router.post('/api/FalsePosAPI', (req, res) => {
     });
 
   } while (check > 0.000001 && n < 25)
+  console.log(eq.evaluate({x:xm}));
 
   res.json({
     tmpArr: tmpArr

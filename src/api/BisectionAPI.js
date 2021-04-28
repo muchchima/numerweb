@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const math = require('mathjs');
+const math = require("mathjs");
 /**
  * @swagger
  *  tags:
@@ -32,26 +32,27 @@ const math = require('mathjs');
  *       201:
  *         description: post data
  */
-router.post('/api/BisectionAPI', (req, res) => {
-  
+
+
+router.post("/api/BisectionAPI", (req, res) => {
   var eq = math.compile(req.body.equation);
   var xl = parseFloat(req.body.xl);
   var xr = parseFloat(req.body.xr);
   var xm = 0;
   var n = 0;
-  var check = parseFloat(0.000000);
+  var check = parseFloat(0.0);
   var tmpArr = [];
 
   const findxm = (xl, xr) => {
-    return (parseFloat(xl) + parseFloat(xr)) / 2
-  }
+    return (parseFloat(xl) + parseFloat(xr)) / 2;
+  };
 
   do {
     let XL = {
-      x: xl
+      x: xl,
     };
     let XR = {
-      x: xr
+      x: xr,
     };
 
     xm = findxm(xl, xr);
@@ -65,19 +66,18 @@ router.post('/api/BisectionAPI', (req, res) => {
     }
 
     tmpArr.push({
-      'iteration': n,
-      'xl': xl,
-      'xr': xr,
-      'xm': xm,
-      'Error': check,
+      iteration: n,
+      xl: xl,
+      xr: xr,
+      xm: xm,
+      Error: check,
     });
-
-  } while (check > 0.000001 && n < 25)
+  } while (check > 0.000001 && n < 25);
 
   res.json({
-    tmpArr: tmpArr
-
-  })
+    tmpArr: tmpArr,
+  });
 });
 module.exports = router;
+
 
