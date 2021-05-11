@@ -4,7 +4,7 @@ import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //import bootstrap components
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Button } from "react-bootstrap";
 import {
   Dropdown,
   DropdownMenu,
@@ -61,7 +61,10 @@ const Topbar = () => {
               <DropdownItem href="/Jacobi">Jacobi Iteration</DropdownItem>
             </DropdownMenu>
           </Dropdown>
-        </Nav>
+          <span>&nbsp;&nbsp;</span>
+          <Button color="secondary" href="/Newton-Divided-Difference" >Interpolation - Newton-Divided Difference</Button>
+         </Nav>
+         <Navbar.Brand href="http://localhost:5000/api-docs/">Swagger</Navbar.Brand>
       </Navbar>
     </div>
   );

@@ -6,7 +6,7 @@ const math = require("mathjs");
  *  tags:
  *   name: Bisection
  *   description: Get all books
- * 
+ *
  */
 
 /**
@@ -19,7 +19,7 @@ const math = require("mathjs");
  *         description: GET
  */
 
- /**
+/**
  * @swagger
  * /api/BisectionAPI:
  *   post:
@@ -33,14 +33,13 @@ const math = require("mathjs");
  *         description: post data
  */
 
-
 router.post("/api/BisectionAPI", (req, res) => {
   var eq = math.compile(req.body.equation);
   var xl = parseFloat(req.body.xl);
   var xr = parseFloat(req.body.xr);
   var xm = 0;
   var n = 0;
-  var check = parseFloat(0.0);
+  var check;
   var tmpArr = [];
 
   const findxm = (xl, xr) => {
@@ -48,22 +47,8 @@ router.post("/api/BisectionAPI", (req, res) => {
   };
 
   do {
-    let XL = {
-      x: xl,
-    };
-    let XR = {
-      x: xr,
-    };
-
     xm = findxm(xl, xr);
     n++;
-    if (eq.evaluate(XL) * eq.evaluate(XR) > 0) {
-      check = Math.abs((xm - xl) / xm).toFixed(8);
-      xl = xm;
-    } else {
-      check = Math.abs((xm - xr) / xm).toFixed(8);
-      xr = xm;
-    }
 
     tmpArr.push({
       iteration: n,
@@ -72,6 +57,14 @@ router.post("/api/BisectionAPI", (req, res) => {
       xm: xm,
       Error: check,
     });
+
+    if (eq.evaluate({x:xm}) > 0) {
+      check = Math.abs((xm - xr) / xm).toFixed(8);
+      xr = xm;
+    } else {
+      check = Math.abs((xm - xl) / xm).toFixed(8);
+      xl = xm;
+    }
   } while (check > 0.000001 && n < 25);
 
   res.json({
